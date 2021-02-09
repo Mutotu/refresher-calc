@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+
+    Create a webpage that contains a script that displays in pairs and strong (bold), the letters xy and the numbers 12 and 89 on the same line, with each pair of characters separated by one space. Write the script using document.write statements. 
+    
+    Use a font family of Times New Roman and the color red for the letters xy, a font family of Arial and the color blue for the the numbers 12 and a font family of Impact, the color green, and emphasized (in italics) for the numbers 89. 
+
+Your output should look like this:       xy 12 89
+
+
+  -->
+<!--
+    Create a webpage that contains a script that inputs three integers via form text boxes and displays the sum, average, and product of the three integers, and the smallest and largest of the three integers. Your results should be displayed using a form textarea or a div element - DO NOT USE ALERT!!!.
+
+You should not present any result if the user does not type NUMBERS in the input boxes!!! An error message should be displayed in this case. If the input from the user are all valid, then present the result and the error message should not be shown anymore!
+
+Define a 'Click to Fade Results' button on the form. Use jQuery to define a ready handler that defines a click event handler for the button, such that clicking the button fades the results in the textarea or div where you put the results.
+See this jQuery example: fading an element (Links to an external site.)  
+
+Hints: 
+
+For finding the smallest and largest number, use the Math Object Methods of min and max.
+Remember to bring the faded area back to "live" status if the user clicks the Reset button or do another input and clicks the Submit button! 
+
+  -->
+<html>
+  <head>
+    <script></script>
+  </head>
+  <style>
+    body {
+      background-color: rosybrown;
+    }
+  </style>
+  <body>
+    <h1>Page 1</h1>
+    <a href="hw2.html">Homework2</a>
+    <script>
+      document.write("<p>");
+      document.write(
+        '<span style="color: red; font-family: "Times New Roman"; font-style: bold">xy</span> '
+      );
+
+      document.write(
+        '<span style="font-family: Ariel; color: blue; font-style: bold"> 12</span> '
+      );
+
+      document.write(
+        '<span style=" font-family: Impact; color: green; font-style: italic; font-style: bold;">89</span'
+      );
+
+      document.write("</p>");
+    </script>
+
+    <!-- 
+
+
+    <p>
+      <span style="color: red; font-family: 'Times New Roman'; font-style: bold"
+        >xy</span
+      >
+      <span style="font-family: Ariel; color: blue; font-style: bold"> 12</span>
+      <span
+        style="
+          font-family: Impact;
+          color: green;
+          font-style: italic;
+          font-style: bold;
+        "
+        >89</span
+      >
+    </p>
+    -->
+  </body>
+</html>

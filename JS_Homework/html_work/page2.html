@@ -1,0 +1,100 @@
+<!-- 
+  Create a webpage that contains a script that inputs three integers via form text boxes and displays the sum, average, and product of the three integers, and the smallest and largest of the three integers. Your results should be displayed using a form textarea or a div element - DO NOT USE ALERT!!!.
+
+You should not present any result if the user does not type NUMBERS in the input boxes!!! An error message should be displayed in this case. If the input from the user are all valid, then present the result and the error message should not be shown anymore!
+
+Define a 'Click to Fade Results' button on the form. Use jQuery to define a ready handler that defines a click event handler for the button, such that clicking the button fades the results in the textarea or div where you put the results.
+See this jQuery example: fading an element (Links to an external site.)  
+
+Hints: 
+
+For finding the smallest and largest number, use the Math Object Methods of min and max.
+Remember to bring the faded area back to "live" status if the user clicks the Reset button or do another input and clicks the Submit button! 
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- not nowrking script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#fade").click(function () {
+          $("#result").fadeTo(2000, 0.4);
+        });
+      });
+      function reset() {}
+      function myclick() {
+        var num1 = 0;
+        var num2 = 0;
+        var num = 0;
+        var sum = 0;
+
+        var avg = 0;
+        var product = 0;
+        var smallest = 0;
+        var largest = 0;
+
+        num1 = document.getElementById("number1").value;
+        num2 = document.getElementById("number2").value;
+        num3 = document.getElementById("number3").value;
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        num3 = parseInt(num3);
+
+        sum = num1 + num2 + num3;
+        avg = sum / 3;
+        product = num1 * num2 * num3;
+        smallest = Math.min(num1, num2, num3);
+        largest = Math.max(num1, num2, num3);
+
+        // Do errro handleer for isNan
+
+        document.getElementById("result").textContent =
+          "The numbers are " +
+          num1 +
+          num2 +
+          num3 +
+          ".The sum is" +
+          sum +
+          ". The avg is " +
+          avg +
+          ".The product is " +
+          product +
+          ".The smallest number is " +
+          smallest +
+          ".The largest number is " +
+          largest +
+          ".";
+      }
+    </script>
+    <style>
+      body {
+        background-color: rosybrown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Page 2</h1>
+    <a href="hw2.html">Homework2</a>
+    <form>
+      <label for="number1">Number1</label>
+      <input id="number1" type="text" /><br />
+      <label for="number2">Number1</label>
+      <input id="number2" type="text" /><br />
+      <label for="number3">Number1</label>
+      <input id="number3" type="text" /><br />
+      <button onclick="myclick()" type="button">Submit</button>
+      <button onclick="reset()" type="button">Reset</button>
+    </form>
+    <div>
+      <p>Result</p>
+      <textarea id="result" rows="6" readonly></textarea><br />
+      <button type="button" id="fade">Click to Fade Resuls</button>
+    </div>
+  </body>
+</html>
