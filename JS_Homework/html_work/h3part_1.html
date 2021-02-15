@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Part1</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Calculate the grades" />
+    <meta name="author" content="Muttalip Aydemir" />
+
+    <style>
+      body {
+        background-color: antiquewhite;
+        text-align: center;
+      }
+      #starter {
+        margin-right: 140px;
+      }
+      h1 {
+        background-color: rgb(109, 77, 39);
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      /* check to make sure this is on the lfet side of the page */
+      #link {
+        margin-right: 840px;
+      }
+      label {
+        display: inline-block;
+        width: 140px;
+        text-align: left;
+      }
+      div {
+        margin-left: 190px;
+      }
+      #result,
+      #box {
+        margin-left: 160px;
+      }
+    </style>
+    <script>
+      "use strict";
+
+      function myClear() {
+        var elements = document.getElementById("grade-calc").elements;
+
+        for (var indice = 0; indice < elements.length; indice++) {
+          elements[indice].value = "";
+        }
+
+        document.getElementById("result").innerHTML = "";
+      }
+      function myclick() {
+        // get the scores
+        var homework = parseInt(document.getElementById("homework").value);
+        var mid_term = parseInt(document.getElementById("mid_term").value);
+        var final = parseInt(document.getElementById("final").value);
+        var participation = parseInt(
+          document.getElementById("participation").value
+        );
+        //console.log(homework, midTerm, final, participation);
+        var list = [homework, mid_term, final, participation];
+        checkNumber(list);
+      }
+      // check if the number are between 0-100
+      function checkNumber(q) {
+        var i = 0;
+        for (i = 0; i < eval.length; i++) {
+          console.log(typeof q[i] + "is that");
+          if (q[i] < 0 || q[i] > 100) {
+            // console.log(q[i]);
+            document.getElementById("result").innerHTML =
+              "Please enter numbers between 0 - 100!";
+          } else {
+            // final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation)
+            //Calculate the grades
+            var finalAverage =
+              q[0] * 0.5 + q[1] * 0.2 + q[2] * 0.2 + q[3] * 0.1;
+            finalAverage = Math.round(finalAverage);
+            console.log(finalAverage + "asdasdas it");
+            //check if the student passes
+            if (finalAverage >= 90 && finalAverage <= 100) {
+              document.getElementById("result").innerHTML =
+                "Your final average is " + finalAverage + ".Your grade is A.";
+            }
+            if (finalAverage >= 80 && finalAverage <= 89) {
+              document.getElementById("result").innerHTML =
+                "Your final average is " + finalAverage + ".Your grade is B.";
+            }
+            if (finalAverage >= 70 && finalAverage <= 79) {
+              document.getElementById("result").innerHTML =
+                "Your final average is " + finalAverage + ".Your grade is C.";
+            }
+            if (finalAverage >= 60 && finalAverage <= 69) {
+              document.getElementById("result").innerHTML =
+                "Your final average is " +
+                finalAverage +
+                ".Your grade is D. You must retake the course.";
+            }
+            if (finalAverage < 60) {
+              document.getElementById("result").innerHTML =
+                "Your final average is " +
+                finalAverage +
+                ".Your grade is F. You must retake the course.";
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Student Grades</h1>
+    <!--add the link-->
+    <a id="link" href="hw3.html">Homework3</a>
+    <!-- Get the student's grade -->
+    <form id="grade-calc">
+      <p id="starter">Please enter your scores</p>
+      <label for="homework">Homework Average </label>
+      <input id="homework" type="number" name="homework" /><br />
+      <label for="mid_term">Mid-Term </label>
+      <input id="mid_term" type="number" name="mid_term" /><br />
+      <label for="final">Final Exam</label>
+      <input id="final" type="number" name="final" /><br />
+      <label for="participation">Participation </label>
+      <input id="participation" type="number" name="participation" /><br />
+      <div>
+        <br />
+        <button onclick="myclick()" type="button">Submit</button>
+        <button onclick="myClear();" type="button">Reset</button>
+      </div>
+    </form>
+
+    <p id="box">Result</p>
+    <textarea id="result" rows="10" readonly></textarea>
+  </body>
+</html>
