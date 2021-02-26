@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lan="en">
+  <head>
+    <title>Homework3-Part2</title>
+    <meta charset="utf-8" />
+    <meta name="decsribtion" content="Homework3 for Java Script Class" />
+    <meta name="author" content="Muttalip Aydemir" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+      $(function () {
+        $(document).tooltip();
+      });
+    </script>
+
+    <style>
+      .container {
+        background-color: rgb(165, 127, 77);
+      }
+      .jumbotron {
+        background-color: rgb(206, 183, 154);
+      }
+      input {
+        background-color: rgb(238, 216, 186);
+      }
+      body {
+        background-color: rgb(121, 79, 25);
+      }
+      label {
+        display: inline-block;
+      }
+      button {
+        color: rgb(102, 12, 9);
+        background-color: burlywood;
+      }
+      h1 {
+        padding-bottom: 20px;
+      }
+   
+    </style>
+
+    <script>
+      //get the items from html
+      function myclick() {
+        var count1 = parseInt(document.getElementById("item1").value);
+        var count2 = parseInt(document.getElementById("item2").value);
+        var count3 = parseInt(document.getElementById("item3").value);
+        var count4 = parseInt(document.getElementById("item4").value);
+        console.log(item1, item2, item3, item4);
+
+        //put the number of items sold to "number sold" section
+        document.getElementById("sold1").value = count1;
+        document.getElementById("sold2").value = count2;
+        document.getElementById("sold3").value = count3;
+        document.getElementById("sold4").value = count4;
+
+        var list = [count1, count2, count3, count4];
+        var price = [239.99, 129.75, 99.95, 350.89];
+        var totalResult = 0;
+
+        for (var i = 0; i < list.length; i++) {
+          var result = list[i] * price[i];
+
+          document.getElementById("total" + (i + 1)).value = result.toFixed(2);
+
+          totalResult += result;
+          // console.log(totalResult + "total");
+          document.getElementById("total_sold").value = totalResult.toFixed(2);
+
+          document.getElementById("total_earnings").value = (
+            totalResult * 0.09 +
+            250
+          ).toFixed(2);
+        }
+      }
+
+      function res() {
+        var reset = document.getElementsByTagName("input");
+        for (i = 0; i < reset.length; i++) {
+          reset[i].value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Homework3- Part 2</h1>
+        <a href="hw3.html">Homework3</a><br><br>
+      
+          <label for="name">Salesperson:</label
+          ><input
+            type="text"
+            id="name"
+            title="Please make sure that the salesperson's name is spelled correctly"
+          /><br />
+        </p>
+
+        <br />
+
+        <!-- <div class="jumbotron"></div> -->
+        <h4>Enter the number of items sold for each item number</h4>
+
+        <form id="sold--items">
+          <label for="item1">Item 1:</label
+          ><input type="number" id="item1" /><br />
+          <label for="item2">Item 2:</label
+          ><input type="number" id="item2" /><br />
+          <label for="item3">Item 3:</label
+          ><input type="number" id="item3" /><br />
+          <label for="item4">Item 4:</label
+          ><input type="number" id="item4" /><br /><br />
+          <button type="button" onclick="myclick()">Submit</button>
+          <button type="button" value="Reset" onclick="res()">Reset</button>
+        </form>
+        <br />
+        <div id="#">
+          <table>
+            <tr>
+              <th>Item#</th>
+              <th>Price</th>
+              <th>Number Sold</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td id="price1">$239.99</td>
+              <td><input id="sold1" type="number" readonly /></td>
+              <td><input id="total1" type="number" readonly /></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td price2>$129.75</td>
+              <td><input id="sold2" type="number" readonly /></td>
+              <td><input id="total2" type="number" readonly /></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td price3>$99.95</td>
+              <td><input id="sold3" type="number" readonly /></td>
+              <td><input id="total3" type="number" readonly /></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td price4>$350.89</td>
+              <td><input id="sold4" type="number" readonly /></td>
+              <td><input id="total4" type="number" readonly /></td>
+            </tr>
+          </table>
+
+          <table>
+            <tr>
+              <td>Total Amount Sold:</td>
+              <td></td>
+
+              <td></td>
+              <td>
+                <input id="total_sold" type="number" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td>Total Weekly Earnings:</td>
+              <td></td>
+              <td></td>
+              <td><input id="total_earnings" type="number" readonly /></td>
+            </tr>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+   
+  </body>
+</html>
