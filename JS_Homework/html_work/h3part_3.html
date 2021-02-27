@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework for CNIT 133</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Fahrenheit and Celsius Conversion" />
+    <meta name="author" content="Muttalip Aydemir" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <style></style>
+    <script>
+      function errorMessage() {
+        var error = document.getElementById("error");
+
+        var degree = document.getElementById("degree").value;
+        if (isNaN(degree) || degree < 0) {
+          error.textContent = "Please enter a positive number";
+          error.style.color = "red";
+          return false;
+        } else {
+          error.textContent = "";
+          return true;
+        }
+      }
+
+      function myclickF() {
+        if (errorMessage()) {
+          degree = parseInt(document.getElementById("degree").value);
+          // console.log(degree);
+
+          document.getElementById(
+            "result"
+          ).value = `${degree}C is  ${Math.round((9 / 5) * degree + 32)}F`;
+        }
+      }
+      function myclickC() {
+        //geth the user's degree
+        if (errorMessage()) {
+          degree = parseInt(document.getElementById("degree").value);
+          // console.log(degree);
+          document.getElementById("result").value = `${degree}F is ${Math.round(
+            (5 / 9) * (degree - 32)
+          )}C`;
+        }
+      }
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Muttalip Aydemir CNIT 133</h1>
+      </header>
+      <a href="hw3.html">Homework3</a>
+      <div class="jumbotron">
+        <h4>Part 3</h4>
+        <!--Get the degree from the user-->
+        <form>
+          <label for="degree">Degree: </label
+          ><input name="degree" id="degree" type="text" /><br /><br />
+          <button type="button" id="button1" onclick="myclickF()">
+            Fahrenheit
+          </button>
+          <button type="button" id="button2" onclick="myclickC()" onclick="">
+            Celsius
+          </button>
+          <br /><br />
+          <label for="result">Output: </label
+          ><input name="result" id="result" readonly />
+          <div id="error"></div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
