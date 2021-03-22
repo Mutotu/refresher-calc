@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table th{
+        background-color: maroon;
+        color: white;
+      }
+    table tr:nth-child(odd) td{background-color: yellow;
+    
+  }
+  table tr:nth-child(even) td{background-color: rgb(206, 91, 15);
+  
+    
+  }</style>
+    </script>
+  </head>
+  <body>
+    <a href="hw4.html">Homework4</a><br><br>
+    <script>
+      var principal = 1000;
+      var rate = [0.05, 0.06, 0.07]; // in percentage
+      var years = 10;
+
+      for (let i = 0; i < rate.length; i++) {
+        document.write(
+          "<table width=300 border =1 style='margin-bottom: 20px '>  "
+        );
+        document.write(
+          "<tr><th>Year</th><th>Amount on deposit</th><th>Interest Rate</th></tr>"
+        );
+        if (rate[i] === 0.05) {
+          for (let y = 1; y <= years; y++) {
+             var calc5 =  principal  * ((1 + rate[i]) ** y);
+            calc5 =calc5.toFixed(2)
+            document.write(
+              "<tr><td>" +
+                y +
+                "</td><td>" +
+                calc5 +
+                "</td><td>" +
+                rate[i] +
+                "</td>"
+            );
+          }
+        }
+        if (rate[i] === 0.06) {
+          for (let y = 1; y <= years; y++) {
+            var calc6 =  principal  * ((1 + rate[i]) ** y);
+            calc6 =calc6.toFixed(2)
+            document.write(
+              "<tr><td>" +
+                y +
+                "</td><td>" +
+                calc6 +
+                "</td><td>" +
+                rate[i] +
+                "</td>"
+            );
+          }
+        }
+        if (rate[i] === 0.07) {
+          for (let y = 1; y <= years; y++) {
+            var calc7 =  principal  * ((1 + rate[i]) ** y);
+            calc7 =calc7.toFixed(2)
+            document.write(
+              "<tr><td>" +
+                y +
+                "</td><td>" +
+                calc7 +
+                "</td><td>" +
+                rate[i] +
+                "</td>"
+            );
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

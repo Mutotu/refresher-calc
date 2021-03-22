@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="CNIT 133 Hw4 - Looping Statements" />
+    <title>Homework for Looping</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script>
+      $(function () {
+        $(".move").draggable();
+      });
+    </script>
+    <style>
+      body {
+        background-color: rgb(180, 140, 95);
+      }
+      .forloop,
+      .whileloop {
+        width: 400px;
+        height: 200px;
+        margin: 0px auto;
+        padding: 20px;
+        text-align: left;
+        background-color: rgb(212, 201, 187);
+      }
+      .move {
+        width: 400px;
+        height: 50px;
+        margin: 0px auto;
+        padding: 10px 10px;
+        text-align: center;
+        background-color: rgb(212, 201, 187);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <a href="hw4.html">Homework4</a>
+      <div class="forloop">
+        <h2>Part 1a</h2>
+        <script>
+          var product = 1;
+          var sum = 0;
+          var num = 25;
+          var all = [];
+
+          for (let i = 5; i <= num; i += 4) {
+            all.push(i);
+            product *= i;
+            sum += i;
+          }
+          resultSum =
+            "The total of every 4th number between 5 and 25 inclusive which are " +
+            all.join(" + ") +
+            " is " +
+            sum +
+            ".";
+          resultProduct =
+            "The product of every 4th number between 5 and 25 inclusive which are " +
+            all.join(" * ") +
+            " is " +
+            product.toLocaleString() +
+            ".";
+          document.write(resultSum);
+          document.write("<br><br>");
+          document.write(resultProduct);
+        </script>
+      </div>
+      <br />
+      <div class="move">
+        <p>I dare you move me around :)</p>
+      </div>
+      <br />
+      <div class="whileloop">
+        <h2>Part 1b</h2>
+        <script>
+          var productB = 1;
+          var sumB = 0;
+          var numB = 3;
+          var allB = [];
+
+          while (numB <= 18) {
+            allB.push(numB);
+            productB *= numB;
+            sumB += numB;
+            numB += 3;
+          }
+          resultSumB =
+            "The total of every 3th number between 3 and 18 inclusive which are " +
+            allB.join(" + ") +
+            " is " +
+            sumB +
+            ".";
+          resultProductB =
+            "The product of every 3th number between 3 and 18 inclusive which are " +
+            allB.join(" * ") +
+            " is " +
+            productB.toLocaleString() +
+            ".";
+          document.write(resultSumB);
+          document.write("<br><br>");
+          document.write(resultProductB);
+        </script>
+      </div>
+    </section>
+  </body>
+</html>
