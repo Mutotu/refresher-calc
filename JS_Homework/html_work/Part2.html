@@ -36,7 +36,7 @@
  
             for(let k=1; k<=years; k++){
               var calc5 =  principal  * ((1 + rate[i]) ** k);
-            calc5 =calc5.toFixed(2).toLocaleString('en-US')
+            calc5 =calc5.toFixed(2)
             document.write(
               "<tr><td>" +
                 k +
@@ -44,7 +44,7 @@
                 calc5 +
                 "</td><td>" +
                 rate[i] +
-                "</td>"
+                "</td></br>"
             );
             }
       }
