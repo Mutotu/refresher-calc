@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <title>Homework 5 Part1</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Assignment for CNIT 132" />
+    <meta name="author" content="Muttalip Aydemir" />
+
+    <style>
+      body {
+        text-align: center;
+        background-color: aquamarine;
+        margin-top: 50px;
+      }
+      div {
+        background-color: rgb(147, 170, 190);
+        width: 250px;
+        border-radius: 15px;
+        text-align: center;
+        margin-left: 450px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".flip").click(function () {
+          $(".inst").slideToggle("slow");
+        });
+      });
+
+      function validation() {
+        var name = document.getElementById("fullname").value;
+        var radio = document.forms["myForm"].elements["contact"];
+        var checkBox = document.forms["myForm"].elements["work"];
+        var language =
+          document.forms["myForm"].elements["programming"].selectedIndex;
+        var error = " Please fill all the places";
+        var check = false;
+        for (var i = 0; i < radio.length; i++) {
+          if (radio[i].checked) {
+            check = true;
+          }
+        }
+
+        if (name === "" || check === false || language < 1) {
+          document.getElementById("message").innerHTML = "<br/>" + error;
+        } else {
+          document.getElementById("message").innerHTML = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="flip">Click Here to Show/Hide Instructions</div>
+
+    <div class="inst">
+      <p>
+        A validation script is used to check whether the user has actually
+        filled the form before submitting it.
+      </p>
+    </div>
+    <br />
+    <form id="myForm" name="myForm">
+      <label for="fullname">Full name:</label>
+      <input type="text" id="fullname" name="fullname" /><br /><br />
+      <br />
+      <p>Contact method</p>
+
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1">Email</label>
+      <input type="radio" id="contactChoice2" name="contact" value="mail" />
+      <label for="contactChoice2">Mail</label>
+      <input type="radio" id="contactChoice3" name="contact" value="phone" />
+      <label for="contactChoice3">Phone</label><br /><br />
+      <p>Preference way of learning (Optional)</p>
+      <input type="checkbox" id="coding" name="work" />
+      <label for="coding">Coding</label>
+      <input type="checkbox" id="game" name="work" />
+      <label for="game">Gaming</label><br /><br />
+
+      <label for="programming">Choose a language:</label>
+      <select name="programming" id="programming">
+        <option value=" ">-Choose one-</option>
+        <option value="python">Python</option>
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option></select
+      ><br /><br />
+      <input type="button" value="Submit" id="webpage" onclick="validation()" />
+      <div id="message"></div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework5 Part2</title>
+    <script>
+      function newPage1() {
+        var dest1 = myForm1.dest1.options[myForm1.dest1.selectedIndex].value;
+        window.open(dest1, "_blank");
+      }
+      function newPage2() {
+        var dest2 = myForm2.dest2.options[myForm2.dest2.selectedIndex].value;
+        window.open(dest2, "_blank");
+      }
+    </script>
+    <style>
+      body {
+        width: 500px;
+        margin: 0px auto;
+        padding: 15px;
+        text-align: left;
+        background-color: rgb(170, 148, 148);
+      }
+    </style>
+  </head>
+  <body>
+    <form name="myForm1">
+      <h3>Choose a website to visit</h3>
+
+      <select name="dest1" onChange="newPage1();">
+        <option>Choose Destination:</option>
+        <option value="https://stackoverflow.com/">Yahoo</option>
+        <option value="http://www.w3.org/">W3C</option>
+        <option value="http://www.google.com/">Google</option>
+      </select>
+    </form>
+
+    <br /><br />
+
+    <form name="myForm2">
+      <h3>Choose a website</h3>
+
+      <select name="dest2">
+        <option value="https://stackoverflow.com/">Stackoverflow</option>
+        <option value="http://www.w3.org/">W3C</option>
+        <option value="http://www.google.com/">Google</option>
+      </select>
+
+      <input type="button" value="Go" onClick="newPage2();" />
+    </form>
+  </body>
+</html>

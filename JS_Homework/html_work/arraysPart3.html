@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Homework 5 Part3</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Assignment for CNIT 132" />
+    <meta name="author" content="Muttalip Aydemir" />
+
+    <style>
+      body {
+        background-color: rgb(186, 233, 233);
+        margin: auto;
+      }
+      form {
+        margin-top: 20px;
+        text-align: center;
+      }
+      label {
+        color: rgb(224, 33, 33);
+      }
+      #inf {
+        background-color: rgb(110, 110, 163);
+      }
+      textarea {
+        border-radius: 10px;
+        background-color: rgb(130, 141, 182);
+      }
+      p {
+        text-align: center;
+        border-radius: 15px;
+        margin: 12px;
+        padding-left: 250px;
+        padding-right: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <p>
+      This program enables the user to enter a state name (full or just the two
+      characters that represent the state) and have the State Name, State
+      Capital, and population appear in separate input box or textarea.
+    </p>
+    <form>
+      <label for="state">Enter a state>></label>
+      <input type="text" name="text" id="state" />
+      <input type="button" value="State info" onclick="stateInfo()" id="inf" />
+      <br /><br />
+
+      <textarea cols="40" rows="8" id="info" readonly></textarea>
+    </form>
+    <script>
+      var allStates = [
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming",
+      ];
+
+      var states = [
+        ["AL", "Alabama", "Montgomery", "4,903,185"],
+        ["AK", "Alaska", "Juneau", "731,545"],
+        ["AZ", "Arizona", "Phoenix", "7,278,717"],
+        ["AR", "Arkansas", "Little Rock", "3,017,825"],
+        ["CA", "California", "Sacramento", "39,512,223"],
+        ["CO", "Colorado", "Denver", "5,758,736"],
+      ];
+
+      function stateInfo() {
+        var state = document.getElementById("state").value;
+        state = state.toLowerCase();
+        var found = false;
+        for (i = 0; i < states.length; i++) {
+          for (j = 0; j < states[i].length; j++) {
+            if (
+              state.toUpperCase() === states[i][j] ||
+              state.charAt(0).toUpperCase() + state.slice(1) === states[i][j]
+            ) {
+              var result = `Thank you for your inquiry, here is the information you requested:
+State abbr = ${states[i][0]}
+State Name = ${states[i][1]}
+Capital = ${states[i][2]}
+Population = ${states[i][3]}`;
+              //   console.log(result);
+              document.getElementById("info").innerHTML = result;
+              found = true;
+            }
+            if (
+              allStates.includes(
+                state.charAt(0).toUpperCase() + state.slice(1)
+              ) ||
+              allStates.includes(
+                state
+                  .split(" ")
+                  .map(function (name) {
+                    return name[0].toUpperCase() + name.slice(1);
+                  })
+                  .join(" ")
+              )
+            ) {
+              var others =
+                "The database does not have information about this state, we only have information about AL, AK, AZ, AR, CA, and CO";
+              document.getElementById("info").innerHTML = others;
+              found = true;
+            }
+          }
+        }
+        if (found === false) {
+          var errMessage = "Enter only US State names";
+          document.getElementById("info").innerHTML = errMessage;
+        }
+      }
+    </script>
+  </body>
+</html>
