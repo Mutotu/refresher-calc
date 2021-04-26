@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 7</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="working with forms from float CSS to grid"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      form {
+        padding: 1em;
+        background: #f9f9f9;
+        border: 1px solid black;
+        margin-top: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em;
+      }
+      form input {
+        margin-bottom: 1rem;
+        background: white;
+        border: 1px solid #9c9c9c;
+      }
+      label {
+        text-align: right;
+        display: block;
+        padding: 0.5em 1.5em 0.5em 0;
+      }
+
+      .myinput {
+        width: 100%;
+        padding: 0.7em;
+        margin-bottom: 0.5rem;
+      }
+      input:focus {
+        background-color: gold;
+      }
+      form div {
+        text-align: center;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        background: lightgray;
+        padding: 0.7em;
+        border: 0;
+      }
+      h1 {
+        text-align: center;
+        font-style: italic;
+        color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Assignment 7 - working with forms</h1>
+    <form class="form1" action="#" method="post">
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        maxlength="15"
+        name="firstname"
+        id="firstname"
+        class="myinput"
+        required
+      />
+      <label for="lastname">Last Name</label>
+      <input
+        type="text"
+        class="myinput"
+        maxlength="25"
+        name="lastname"
+        id="lastname"
+      />
+      <label for="age">Age</label>
+      <input
+        type="number"
+        class="myinput"
+        name="age"
+        id="age"
+        min="18"
+        max="65"
+      />
+      <label for="email">Email</label>
+      <input type="email" class="myinput" name="email" id="email" required />
+      <label for="date">Date of your Membership</label>
+      <input
+        type="date"
+        class="myinput"
+        name="date"
+        max="2021-12-31"
+        id="date"
+      />
+
+      <label for="reward">Choose your reward</label>
+      <input list="select" class="myinput" name="reward" id="reward" />
+      <datalist id="select">
+        <option value="Two-year Member Magazine subscription"></option>
+        <option value="2 Tickets to Annual Seminar"></option>
+        <option value="Voucher $100 food during seminar"></option>
+        <option value="1-day hotel stay for seminar"></option>
+      </datalist>
+
+      <div>
+        <input type="submit" value="Submit" /> &nbsp;
+        <input type="reset" value="Clear" />
+      </div>
+    </form>
+    <p><a href="assignments.html">Assignments</a></p>
+  </body>
+</html>
