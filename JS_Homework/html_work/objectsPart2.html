@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Homework 6 Part2</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Assignment for CNIT 132" />
+    <meta name="author" content="Muttalip Aydemir" />
+    <style>
+      body {
+        text-align: center;
+        background-color: rgb(185, 167, 143);
+      }
+      div {
+        background-color: cadetblue;
+      }
+      a {
+        margin-right: 1100px;
+      }
+    </style>
+    <script>
+      function onClick() {
+        var sentence = document.getElementById("sentence").value;
+        sentence = sentence.toLowerCase();
+
+        var char = document.getElementById("char").value;
+        lowerCaseChar = char.toLowerCase().charAt(0);
+
+        let count = 0;
+        for (let i = 0; i < sentence.length; i++) {
+          if (sentence.charAt(i) === lowerCaseChar) {
+            count++;
+            document.getElementById(
+              "result"
+            ).innerHTML = `'${lowerCaseChar}' appears in the sentence ${count} ${
+              count > 1 ? "times" : "time"
+            }.`;
+          }
+        }
+        if (count === 0) {
+          var err = `Search character '${char[0]}' not found in text string!`;
+
+          //the new window closes the web page
+          var window_page = window.open(
+            "",
+
+            "new_page",
+            "width=300, height=100"
+          );
+          document.getElementById("result").innerHTML = "";
+          document.getElementById("char").innerHTML = "";
+
+          window_page.document.write(err);
+          window.close();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>
+        Create a webpage that contains a script using a form that allows the
+        user to input several lines of text and a search character and uses the
+        String method charAt to determine the number of occurrences of the
+        search character within the text. Use a form textarea for the text and a
+        form input box for the search character.
+      </p>
+    </div>
+    <a href="hw6.html">Homework1</a>
+
+    <form>
+      <label for="sentence">Enter sentences:</label><br />
+      <input type="text" name="sentence" id="sentence" /><br />
+
+      <label for="char">Enter a letter here:</label><br />
+      <input type="text" name="char" id="char" />
+
+      <input
+        type="button"
+        value="submit"
+        id="button"
+        onclick="onClick()"
+      /><br />
+      <p>Result</p>
+      <textarea id="result" readonly></textarea>
+    </form>
+  </body>
+</html>

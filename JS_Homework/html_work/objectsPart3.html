@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Homework 6 Part3</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Assignment for CNIT 132" />
+    <meta name="author" content="Muttalip Aydemir" />
+    <style>
+      body {
+        text-align: center;
+        background-color: rgb(185, 167, 143);
+      }
+      label {
+        display: inline-block;
+        width: 320px;
+        text-align: right;
+        padding-right: 1em;
+      }
+      div {
+        margin-left: 210px;
+      }
+      a {
+        margin-right: 1100px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"
+      integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $('input[name="phone-number"]').mask("(000) 000 0000");
+      });
+    </script>
+    <script>
+      function onClick() {
+        var phone = document.getElementById("phone-number").value;
+        phone = phone.split(/['(',')', ' ']/);
+        document.getElementById("area").value = phone[1];
+        document.getElementById("three").value = phone[3];
+        document.getElementById("four").value = phone[4];
+      }
+      function onReset() {
+        document.getElementById("myForm").reset();
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      Create a webpage that does the following: Input a telephone number as a
+      string in the format (999) 999-9999.
+    </p>
+    <a href="hw6.html">Homework1</a>
+    <form id="myForm">
+      <label for="phone-number"
+        >Enter a phone number
+        <input type="text" name="phone-number" id="phone-number" />
+      </label>
+
+      <br />
+      <label for="area"
+        >Area Code<input type="text" name="area" id="area" readonly
+      /></label>
+      <br />
+      <label for="three"
+        >The first 3 digits
+        <input type="text" name="three" id="three" readonly /></label
+      ><br />
+      <label for="four">
+        The last 4 digits<input
+          type="text"
+          name="four"
+          id="four"
+          readonly /></label
+      ><br />
+      <div>
+        <input
+          type="button"
+          value="Submit"
+          id="submit"
+          class="button1"
+          onclick="onClick() "
+        />
+        <input type="button" value="Reset" onclick="onReset()" />
+      </div>
+    </form>
+  </body>
+</html>

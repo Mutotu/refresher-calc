@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Homework 6 Part1</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Assignment for CNIT 132" />
+    <meta name="author" content="Muttalip Aydemir" />
+    <style>
+      body {
+        margin-top: 20px;
+        text-align: center;
+        background-color: rgb(163, 163, 182);
+      }
+      p {
+        padding: 10px;
+        background-color: antiquewhite;
+      }
+      a {
+        margin-right: 1100px;
+      }
+    </style>
+    <script>
+      function calc() {
+        var number = document.getElementById("num").value;
+        number = new String(number);
+        var splitNumber = number.split(".");
+        if (!number.includes(".") || splitNumber[1].length < 4) {
+          document.getElementById("info").innerText =
+            "Please enter a floating number with at least 4 decimal positons";
+        } else {
+          document.getElementById(
+            "info"
+          ).innerText = `Your orginal number is ${number}.Rounding the floating-point number to the nearest integer is ${Math.round(
+            number
+          )}. Calculate the square root of the floating-point number and round it to an integer is ${Math.round(
+            Math.sqrt(number)
+          )}.Rounding the floating-point number to the nearest tenths position is ${
+            Math.floor(number * 10) / 10
+          }.Rounding the floating-point number to the nearest hunderdths position is ${
+            Math.floor(number * 100) / 100
+          }.Rounding the floating-point number to the nearest thousandths position ${
+            (Math.floor(number) * 1000) / 1000
+          }.`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      Create a webpage that contains a script that has a function that uses
+      Math.round, Math.sqrt, Math.floor, toFixed() etc. to obtain the following:
+    </p>
+    <a href="hw6.html">Homework1</a>
+    <form>
+      <label for="num">Enter a floating number:</label><br />
+
+      <input type="number" name="num" id="num" />
+
+      <input type="button" value="Submit" onclick="calc()" id="button" />
+      <br /><br />
+      <textarea cols="40" rows="20" id="info" readonly></textarea>
+    </form>
+  </body>
+</html>
