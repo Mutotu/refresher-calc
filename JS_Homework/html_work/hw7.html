@@ -1,19 +1,88 @@
 <!DOCTYPE html>
-<html lang = "en-US">
-<head>
-    <title>Homework7</title>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Homework7">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <title>jQuery Drop Down</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="jQuery drop down menu " />
+    <style>
+      body {
+        text-align: center;
+        background-color: wheat;
+      }
 
-<h1>Homework 7</h1>
-<a href="Homework1.html">Homework 1 page</a><br>
-    <a href="#">Part1</a><br>
-    <a href="hwm7.Part2.html">Part2</a>
-
+      nav {
+        background-color: wheat;
+        float: left;
+        margin-left: 190px;
+      }
+      nav ul {
+        text-align: center;
+      }
+      nav ul li {
+        float: left;
+        display: inline;
+      }
+      nav ul li:hover {
+        background: #a72c2c;
+      }
+      nav ul li a {
+        display: block;
+        padding: 15px 25px;
+        color: #444;
+        text-decoration: underline;
+        font-weight: bolder;
+      }
+      nav ul li ul {
+        position: absolute;
+        width: 120px;
+        background: #444;
+      }
+      nav ul li ul li {
+        width: 120px;
+      }
+      nav ul li ul li a {
+        display: block;
+        padding: 15px 10px;
+        color: #fff;
+      }
+      nav ul li ul li:hover a {
+        background: #d1d1d1;
+        color: #f00;
+      }
+      nav ul li ul.fallback {
+        display: none;
+      }
+      nav ul li:hover ul.fallback {
+        display: block;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("nav li ul").hide().removeClass("fallback");
+        $("nav li").hover(
+          function () {
+            $("ul", this).stop().slideDown(200);
+          },
+          function () {
+            $("ul", this).stop().slideUp(200);
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Homework 7</h1>
+    <nav>
     
-    
-</body>
-
+        <li>
+          <a href="Homework1.html">Homework 1 page</a><br>
+          <ul class="fallback">
+            <li><a href="#">Part1</a></li>
+            <li> <a href="hwm7.Part2.html">Part2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
 </html>
