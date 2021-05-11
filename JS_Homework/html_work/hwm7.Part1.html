@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Changin HTML Settings Using JS</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="JS Homework 7 " />
+    <script>
+      function modColor(change) {
+        var colors = document.getElementById("mod");
+
+        if (change === 0) {
+          colors.className += " blue ";
+        } else if (change == 1) {
+          colors.className += " green ";
+        } else if (change == 2) {
+          colors.className += "red";
+        }
+      }
+      function fontChange() {
+        var body = document.body;
+        var fontFamily =
+          document.forms["myForm"].elements["fonts"].selectedIndex;
+        if (fontFamily === 1) {
+          body.className += " arial ";
+        } else if (fontFamily === 2) {
+          body.className += " courier ";
+        } else if (fontFamily === 3) {
+          body.className += " serif ";
+        }
+      }
+
+      function fontStyle(change) {
+        var fstyle = document.getElementById("mod");
+
+        if (change === 0) {
+          fstyle.className += " normal ";
+        } else if (change === 1) {
+          fstyle.className += " italic ";
+        }
+      }
+
+      function fontWeight(change) {
+        var fWeight = document.getElementById("mod");
+
+        if (change === 0) {
+          fWeight.className += " bolder ";
+        } else if (change === 1) {
+          fWeight.className += " lighter ";
+        }
+      }
+      function orginal() {
+        var orginal = document.getElementById("mod");
+        orginal.className = "mod";
+        document.getElementById("myForm").reset();
+      }
+    </script>
+    <style>
+      body {
+        text-align: center;
+      }
+      .blue {
+        background-color: rgb(52, 52, 206);
+      }
+      .green {
+        background-color: rgb(27, 156, 27);
+      }
+      .red {
+        background-color: rgb(230, 63, 63);
+      }
+
+      .arial {
+        font-family: Arial;
+      }
+      .courier {
+        font-family: Courier;
+      }
+      .serif {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .normal {
+        font-style: normal;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .bold {
+        font-weight: 500;
+      }
+      .bolder {
+        font-weight: bolder;
+      }
+      .lighter {
+        font-weight: lighter;
+      }
+      .mod {
+        background-color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      a {
+        margin-right: 800px;
+      }
+    </style>
+  </head>
+  <body id="mod">
+    <a href="hw7.html">Homework 7</a>
+    <form id="myForm">
+      <p>Please select a background color:</p>
+      <label
+        >Blue <input type="radio" name="color" onclick="modColor(0)" /> </label
+      ><br />
+      <label
+        >Green<input type="radio" name="color" onclick="modColor(1)" /> </label
+      ><br />
+      <label
+        >Red <input type="radio" name="color" onclick="modColor(2)" />
+      </label>
+
+      <br /><br />
+      <label for="fonts">Choose a font-family:</label>
+      <select name="fonts" id="fonts" onchange="fontChange()">
+        <option value="#">--Select font family--</option>
+        <option value="arial">Arial</option>
+        <option value="courier">Courier</option>
+        <option value="serif">Times Roman</option>
+      </select>
+
+      <br /><br />
+      <p>Choose a font-style:</p>
+      <label
+        >Normal
+        <input type="radio" name="fstyle" onclick="fontStyle(0)" /> </label
+      ><br />
+      <label
+        >Italic<input type="radio" name="fstyle" onclick="fontStyle(1)" />
+      </label>
+      <br /><br />
+      <p>Please select a font-weight:</p>
+
+      <label
+        >Bolder<input
+          type="radio"
+          name="fWeight"
+          onclick="fontWeight(0)"
+        /> </label
+      ><br />
+      <label
+        >Lighter
+        <input type="radio" name="fWeight" onclick="fontWeight(1)" /> </label
+      ><br /><br />
+      <input
+        type="button"
+        value="Change to Original Settings"
+        onclick="orginal()"
+      />
+    </form>
+  </body>
+</html>
