@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Contact Information" />
+    <title>Contact</title>
+
+    <style>
+      body {
+        text-align: center;
+        background-color: aqua;
+      }
+      h1 {
+        text-decoration: underline;
+      }
+      p {
+        font-style: italic;
+        font-weight: bolder;
+      }
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "menu main main main right right"
+          "menu footer footer footer footer footer";
+        grid-gap: 10px;
+        background-color: #1c7dcc;
+        padding: 10px;
+      }
+
+      .container > div {
+        background-color: rgba(179, 167, 167, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: large;
+        border-radius: 15px;
+      }
+      .head-er {
+        grid-area: header;
+      }
+      .menu {
+        grid-area: menu;
+      }
+      .main {
+        grid-area: main;
+        border-width: thin;
+        margin-left: 100px;
+      }
+      .foot-er {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head-er">
+        <h1>Contact Me Page!</h1>
+      </div>
+      <div class="menu">
+        <a href="modifiedHmwk1.html">Homework1</a>
+      </div>
+      <div class="main">
+        <p>
+          If you want to contact me, you can use the information in the footer
+          part of the page or can fill out the form here!
+        </p>
+        <form action="#" method="POST">
+          <label for="fname">First name:</label><br />
+          <input type="text" id="fname" name="fname" required /><br />
+          <label for="lname">Last name:</label><br />
+          <input type="text" id="lname" name="lname" /><br />
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required /><br />
+          <label for="comment">Comments:</label><br />
+          <textarea
+            id="comment"
+            rows="4"
+            cols="50"
+            placeholder="Comments here!"
+          ></textarea
+          ><br />
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-er">
+      <footer>
+        <p>
+          Composed by:
+          <cite>Muttalip Aydemir</cite>
+          <br />
+          Copyright &copy; 2021
+          <a href="mailto:muttalip.aydemir@gmail.com">Contact me</a>
+        </p>
+        <br />
+      </footer>
+    </div>
+  </body>
+</html>

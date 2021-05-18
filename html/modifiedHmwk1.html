@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Homework1" />
+    <title>Modified Homework1</title>
+    <link rel="shortcut icon" href="moto.png" type="image/x-icon" />
+
+    <style>
+      .head-er {
+        grid-area: header;
+      }
+      .menu {
+        grid-area: menu;
+      }
+      .main {
+        grid-area: main;
+      }
+
+      .foot-er {
+        grid-area: footer;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "menu main main main right right"
+          "menu footer footer footer footer footer";
+        grid-gap: 10px;
+        background-color: #1c7dcc;
+        padding: 10px;
+      }
+
+      .container > div {
+        background-color: rgba(179, 167, 167, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: large;
+        border-radius: 15px;
+      }
+      #vertical a {
+        background-color: rgb(43, 86, 134);
+        color: black;
+        display: block;
+        padding: 12px;
+        border-radius: 15px;
+      }
+      img {
+        width: 130px;
+        height: 160px;
+        border-radius: 8px;
+        text-decoration: underline;
+      }
+      a[href="https://www.thegreatcoursesplus.com/"], a[href="https://www.techopedia.com/2/31579/networks/a-brief-history-of-web-development#the-turn-of-the-century"]
+      {
+        text-decoration: none;
+        color: rgb(125, 37, 207);
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head-er">
+        <header>
+          <h1>Muttalip Aydemir - CNIT 132</h1>
+        </header>
+      </div>
+      <div class="menu" id="vertical">
+        <a href="#">Home</a>
+        <a href="assingments.html">Assingmets</a>
+        <a href="meetup.html">Meetup Report</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="main">
+        <p>
+          There has been so much change with the coming mobile apps in web
+          development that the focus on web development for mobiles is getting
+          more and maybe eventually the web development desing will only be done
+          for mobiles only. Here is a nice article
+          <a
+            href="https://www.techopedia.com/2/31579/networks/a-brief-history-of-web-development#the-turn-of-the-century"
+            target="_blank"
+            rel="noopener noreferer"
+            >The Turn of the Century
+          </a>
+          detailing that broadly.
+        </p>
+
+        <img src="me.jpeg" alt="a photo of me" />
+
+        <p>
+          My name is Muttalip Aydemir. I was born in Turkey and I have been
+          living in the states for about 10 years. I graduated from San
+          Francisco State University, majoring in Sociology. I have been
+          interested in computers for a while so I started my journey by taking
+          some classes at City College.Besides all that, I like listening to
+          metal music, reading, training for boxing and cruising on my
+          motorcyle. My next adventure will include hang-gliding...
+        </p>
+        <!--Add the website you likec down here-->
+        <p>
+          One of the websites that I spent time on was
+          <a href="https://www.thegreatcoursesplus.com/" target="_blank"
+            >The Great Courses</a
+          >
+          where there are tons of different subjects, from art to computer
+          science, to botanic, to pyschology and so on. I got inspired there and
+          decided my journey. I have been trying to learn web development and
+          programming through various resources. I am trying to learn Python,
+          HTML&CSS, Java Script and SQL. With all of them combined I should be
+          able to get a decent job and after that I'd like to pursue more in
+          depth like machine learning. To do all that, hard work is requiered.
+          So I have come to realize that it is a good idea to learn with
+          different resources. For now I am aming to get better at web
+          development.
+        </p>
+
+        <h3>Helpful Websites</h3>
+        <!--The links that helped me in the learning process-->
+
+        <ul>
+          <li class="learn">
+            <a
+              href=" 
+          https://www.w3schools.com/html/html_intro.asp"
+              target="_blank"
+              rel="noopener noreferer"
+              >W3schools</a
+            >
+            This website is good for reviewing the rules and structures.It is
+            usually good for beginners.
+          </li>
+          <!--wrtie things about thewebsite-->
+          <li class="learn">
+            <a
+              href="
+          https://stackoverflow.com/"
+              target="_blank"
+              rel="noopener noreferer"
+              >Stackoverflow</a
+            >
+            If you have problems, this website more than often has someone
+            explaining it.
+          </li>
+          <li class="learn">
+            <a
+              href="https://www.freecodecamp.org/"
+              target="_blank"
+              rel="noopener noreferer"
+              >Freecodecamp</a
+            >
+            It is a free platform where you can learn and practice programming
+            related subjects.
+          </li>
+        </ul>
+      </div>
+      <div class="foot-er">
+        <footer>
+          <p>
+            Composed by:
+            <cite>Muttalip Aydemir</cite>
+            <br />
+            Copyright &copy; 2021
+            <a href="mailto:muttalip.aydemir@gmail.com">Contact me</a>
+          </p>
+          <br />
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

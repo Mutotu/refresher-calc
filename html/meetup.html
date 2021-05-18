@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Meetup Information" />
+    <title>Meetup Report</title>
+    <style>
+      header,
+      footer {
+        margin: 0.2em;
+        padding: 0.5em;
+        background-color: #d2691e;
+        text-align: center;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      nav {
+        margin: 0.2em;
+        min-height: 8em;
+        padding: 0.5em;
+        width: 10%;
+        background-color: lightgreen;
+        text-align: center;
+      }
+      .column {
+        margin: 0.2em;
+        min-height: 8em;
+        padding: 1em;
+        width: 65%;
+        background-color: #9df5d7;
+      }
+      aside {
+        margin: 0.2em;
+        min-height: 8em;
+        padding: 1em;
+        width: 20%;
+        background-color: lightBlue;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: red;
+      }
+      .more {
+        font-weight: bolder;
+      }
+      img {
+        width: 500px;
+        height: 300px;
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      .container img {
+        margin: 100px;
+        transition: transform 0.25s ease;
+        cursor: zoom-in;
+      }
+
+      input[type="checkbox"]:checked ~ label > img {
+        transform: scale(2);
+        cursor: zoom-out;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Meetup Report</h1>
+    </header>
+
+    <div class="row">
+      <nav>
+        <h3>Navigate</h3>
+        <strong
+          >Home<br />
+          <a href="modifiedHmwk1.html">Homework1</a>
+        </strong>
+      </nav>
+      <main class="column">
+        <article>
+          <h2>About This Page</h2>
+          <p>
+            On this page I would like to show the meeting I attend at CTI-
+            Accelerate-101 program
+            <strong>Computer Talent Initiative</strong> It is a year long
+            program where we are trained for interviews for computer programming
+            world. Their trainings consist of teaching a programming language,
+            how to prepeare for the interviews, problem solving techniques and
+            also social skills.
+          </p>
+        </article>
+        <article>
+          <h2>The Features Of The Program</h2>
+
+          <p>
+            CTI program is designed for students that are new to the programming
+            world. Students learn how the programming world works and how to be
+            succeful learning to stay motivated and persistent by having them
+            even learn neuro placticity, for which why they even use dedicated
+            programs where students learn that they are not limited in learning
+            as long as they keep practicing intentionally. Students start
+            learning and practicing from scracth And they bulid from there. CTI
+            program is on a canvas platform where student keep track of the
+            lectures.
+          </p>
+          <p>
+            Every three weeks there is a general meeting that's held for 3-4
+            hours where a guest speaker from tech companies or from universities
+            is hosted from that students get to ask questions related to
+            programming world.On top of that all students are divided into
+            smaller group where they need to meet up every week to check in on
+            how they progress on canvas where they study and ask questions to
+            each other under the supervison of a group leaders.
+          </p>
+          <p>
+            This is a great opportunity for newbees in this programming world.
+            The staff is very helpful and eager to help you along your journey.
+          </p>
+
+          <div class="container">
+            <input type="checkbox" id="zoomCheck" />
+            <label for="zoomCheck">
+              <img src="me.jpg" alt="A photo for proof I am in the program " />
+            </label>
+          </div>
+          <p>Note:Where it is highlighted is my name</p>
+        </article>
+      </main>
+      <aside>
+        <h2>More About The Program</h2>
+        <p class="more">
+          To learn more about the program>>>
+          <a
+            href="https://computingtalentinitiative.org/"
+            target="_blank"
+            rel="”noopener”"
+            >CTI-Program</a
+          >
+        </p>
+        <p class="more">
+          Here is a little video explaning how application form works>>><a
+            href="https://www.youtube.com/watch?v=fDXIcE59Bog"
+            target="_blank"
+            rel="”noopener”"
+          >
+            CTI Application Form
+          </a>
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      <p>
+        Composed by:
+        <cite>Muttalip Aydemir</cite>
+        <br />
+        Copyright &copy; 2021
+        <a href="mailto:muttalip.aydemir@gmail.com">Contact me</a>
+      </p>
+      <br />
+    </footer>
+  </body>
+</html>
